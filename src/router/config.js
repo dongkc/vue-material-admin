@@ -3,10 +3,6 @@ import { LayoutAuth, LayoutDefault, LayoutChat } from '@/components/layouts'
 export const publicRoute = [
   {
     path: '*',
-    component: () => import('@/views/error/NotFound.vue')
-  },
-  {
-    path: '/auth',
     component: LayoutAuth,
     meta: {
       title: 'Login'
@@ -23,6 +19,11 @@ export const publicRoute = [
         component: () => import('@/views/auth/Login.vue')
       }
     ]
+  },
+
+  {
+    path: '/',
+    component: () => import('@/views/error/NotFound.vue')
   },
 
   {

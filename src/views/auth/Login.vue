@@ -60,7 +60,9 @@
 </template>
 
 <script>
+import {setAuth} from '../../test'
 export default {
+
   name: 'PageLogin',
   data() {
     return {
@@ -84,12 +86,15 @@ export default {
   },
   methods: {
     login() {
-      if (this.$refs.form.validate()) {
+      /* if (this.$refs.form.validate()) { */
+      /* if (true) { */
+        // 验证登陆
+       setAuth(true); 
         this.loading = true
-        setTimeout(() => {
-          this.$router.push('/dashboard')
-        }, 1000)
-      }
+      setTimeout(() => {
+        this.$router.push('/dashboard')
+        /* this.$router.push('/404') */
+      }, 1000)
     },
     handleSocialLogin() {}
   }
