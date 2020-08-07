@@ -9,8 +9,6 @@
       <v-footer height="auto" class="pa-3 app--footer">
         <span>法智达(北京)科技有限公司 &copy; {{ new Date().getFullYear() }}</span>
         <v-spacer />
-        <span class="caption mr-1">Make With Love</span>
-        <v-icon color="pink" small>favorite</v-icon>
       </v-footer>
     </v-main>
     <!-- Go to top -->
