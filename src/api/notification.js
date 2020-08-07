@@ -1,29 +1,29 @@
 export default [
   {
-    title: 'New user registered',
+    title: '传感器ID123456故障',
     color: 'light-green',
-    icon: 'account_circle',
-    timeLabel: 'Just now',
+    icon: 'warning',
+    timeLabel: '2分钟前',
   },
   { divider: true, inset: true },
   {
-    title: 'New order received',
+    title: '传感器ID123456故障',
     color: 'light-blue',
-    icon: 'shopping_cart',
+    icon: 'warning',
     timeLabel: '2 min ago',
   },
   { divider: true, inset: true },
   {
-    title: 'New payment made',
+    title: '传感器ID123456故障',
     color: 'cyan',
-    icon: 'payment',
+    icon: 'warning',
     timeLabel: '24 min ago',
   },
   { divider: true, inset: true },
   {
-    title: 'New message from Michael',
+    title: '传感器ID123456故障',
     color: 'red',
-    icon: 'email',
+    icon: 'warning',
     timeLabel: '1 hour ago',
   },
 ]

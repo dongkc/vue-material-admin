@@ -2,40 +2,6 @@
   <div class="page-dashboard">
     <v-container>
       <v-row>
-        <!-- mini statistic start -->
-        <v-col cols="3">
-          <mini-statistic
-            icon="mdi-facebook"
-            title="100+"
-            sub-title="Likes"
-            color="indigo"
-          />
-        </v-col>
-        <v-col cols="3">
-          <mini-statistic
-            icon="mdi-google"
-            title="150+"
-            sub-title="Connections"
-            color="red"
-          />
-        </v-col>
-        <v-col cols="3">
-          <mini-statistic
-            icon="mdi-twitter"
-            title="200+"
-            sub-title="Followers"
-            color="light-blue"
-          />
-        </v-col>
-        <v-col cols="3">
-          <mini-statistic
-            icon="mdi-instagram"
-            title="50+"
-            sub-title="Shots"
-            color="purple"
-          />
-        </v-col>
-        <!-- mini statistic  end -->
         <v-col cols="8">
           <v-widget title="Site Traffic" content-bg="white">
             <v-btn icon slot="widget-header-action">
@@ -212,7 +178,6 @@
 <script>
 import API from '@/api'
 import EChart from '@/components/chart/echart'
-import MiniStatistic from '@/components/widgets/statistic/MiniStatistic'
 import ProfileCard from '@/components/widgets/card/ProfileCard'
 import PlainTable from '@/components/widgets/list/PlainTable'
 import PlainTableOrder from '@/components/widgets/list/PlainTableOrder'
@@ -226,7 +191,6 @@ export default {
   name: 'PageDashboard',
   components: {
     VWidget,
-    MiniStatistic,
     ChatWindow,
     ProfileCard,
     EChart,
