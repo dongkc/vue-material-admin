@@ -1,7 +1,12 @@
 <template>
   <v-app-bar color="primary" dark app>
     <v-app-bar-nav-icon @click="handleDrawerToggle" />
+    <div class="d-flex align-center white--text text-h5">
+      <!-- 法智达智能传感器云平台 -->
+    </div>
+
     <v-spacer />
+
     <v-toolbar-items>
       <!-- <v-btn text href="mailto:wangqiangshen@gmail.com">Hire Me</v-btn>
            <v-btn icon href="https://github.com/tookit/vue-material-admin">
@@ -29,10 +34,10 @@
       <v-menu offset-y origin="center center" transition="scale-transition">
         <template v-slot:activator="{ on }">
           <v-btn icon large text slot="activator" v-on="on">
-              <v-icon medium>logout</v-icon>
-              <!-- <v-avatar size="30px">
-                   <img src="/static/avatar/man_4.jpg" alt="Michael Wang" />
-                   </v-avatar> -->
+            <v-icon medium>logout</v-icon>
+            <!-- <v-avatar size="30px">
+                 <img src="/static/avatar/man_4.jpg" alt="Michael Wang" />
+                 </v-avatar> -->
           </v-btn>
         </template>
         <v-list class="pa-0">
@@ -68,75 +73,75 @@
   </v-app-bar>
 </template>
 <script>
-import NotificationList from '@/components/widgets/list/NotificationList'
-import Util from '@/util'
-export default {
-  name: 'AppToolbar',
-  components: {
-    NotificationList
-  },
-  data() {
-    return {
-      profileMenus: [
-        {
-          icon: 'account_circle',
-          href: '#',
-          title: 'Profile',
-          click: this.handleProfile
-        },
-        {
-          icon: 'settings',
-          href: '#',
-          title: 'Settings',
-          click: this.handleSetting
-        },
-        {
-          icon: 'fullscreen_exit',
-          href: '#',
-          title: 'Logout',
-          click: this.handleLogut
-        }
-      ]
-    }
-  },
-  computed: {
-    toolbarColor() {
-      return this.$vuetify.options.extra.mainNav
-    },
-    breadcrumbs() {
-      const { matched } = this.$route
-      return matched.map((route, index) => {
-        const to =
-          index === matched.length - 1
-            ? this.$route.path
-            : route.path || route.redirect
-        return {
-          text: route.meta.title,
-          to: to,
-          exact: true,
-          disabled: false
-        }
-      })
-    }
-  },
-  methods: {
-    handleDrawerToggle() {
-      this.$emit('side-icon-click')
-    },
-    handleFullScreen() {
-      Util.toggleFullScreen()
-    },
-    handleLogut() {
-      this.$router.push('/auth/login')
-    },
-    handleSetting() {},
-    handleProfile() {},
-    handleGoBack() {
-      this.$router.go(-1)
-    }
-  },
-  created() {}
-}
+ import NotificationList from '@/components/widgets/list/NotificationList'
+ import Util from '@/util'
+ export default {
+   name: 'AppToolbar',
+   components: {
+     NotificationList
+   },
+   data() {
+     return {
+       profileMenus: [
+         {
+           icon: 'account_circle',
+           href: '#',
+           title: 'Profile',
+           click: this.handleProfile
+         },
+         {
+           icon: 'settings',
+           href: '#',
+           title: 'Settings',
+           click: this.handleSetting
+         },
+         {
+           icon: 'fullscreen_exit',
+           href: '#',
+           title: 'Logout',
+           click: this.handleLogut
+         }
+       ]
+     }
+   },
+   computed: {
+     toolbarColor() {
+       return this.$vuetify.options.extra.mainNav
+     },
+     breadcrumbs() {
+       const { matched } = this.$route
+       return matched.map((route, index) => {
+         const to =
+           index === matched.length - 1
+           ? this.$route.path
+           : route.path || route.redirect
+         return {
+           text: route.meta.title,
+           to: to,
+           exact: true,
+           disabled: false
+         }
+       })
+     }
+   },
+   methods: {
+     handleDrawerToggle() {
+       this.$emit('side-icon-click')
+     },
+     handleFullScreen() {
+       Util.toggleFullScreen()
+     },
+     handleLogut() {
+       this.$router.push('/auth/login')
+     },
+     handleSetting() {},
+     handleProfile() {},
+     handleGoBack() {
+       this.$router.go(-1)
+     }
+   },
+   created() {}
+ }
 </script>
 
 <style lang="sass" scoped></style>
