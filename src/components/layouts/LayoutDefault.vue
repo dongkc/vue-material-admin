@@ -7,7 +7,7 @@
       <div class="page-wrapper"><router-view /></div>
       <!-- App Footer -->
       <v-footer height="auto" class="pa-3 app--footer">
-        <span>isocked.com Design &copy; {{ new Date().getFullYear() }}</span>
+        <span>法智达(北京)科技有限公司 &copy; {{ new Date().getFullYear() }}</span>
         <v-spacer />
         <span class="caption mr-1">Make With Love</span>
         <v-icon color="pink" small>favorite</v-icon>
