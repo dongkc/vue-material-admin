@@ -4,9 +4,9 @@
       <v-col>
         <v-card class="pa-3 page-login__card" tile>
           <v-card-title>
-            <img src="/static/m.png" alt="Vue Material Admin" width="55" />
+            <!-- <img src="/static/m.png" alt="Vue Material Admin" width="55" /> -->
             <h1 class="primary--text display-1">
-              Material Admin Template
+              AGV监控管理系统
             </h1>
           </v-card-title>
           <v-card-text>
@@ -20,8 +20,8 @@
                 append-icon="person"
                 autocomplete="off"
                 name="login"
-                label="Login"
-                placeholder="Username or Email"
+                label="登陆"
+                placeholder="用户名"
                 type="text"
                 required
                 :rules="formRule.username"
@@ -31,7 +31,7 @@
                 append-icon="lock"
                 autocomplete="off"
                 name="password"
-                label="Password"
+                label="密码"
                 placeholder="Password"
                 type="password"
                 :rules="formRule.password"
@@ -41,16 +41,9 @@
             </v-form>
           </v-card-text>
           <v-card-actions>
-            <v-icon
-              class="mr-3"
-              v-text="item"
-              v-for="(item, key) in socialIcons"
-              :key="key"
-              @click="handleSocialLogin"
-            />
             <v-spacer />
             <v-btn large tile color="primary" @click="login" :loading="loading">
-              Login
+              登陆
             </v-btn>
           </v-card-actions>
         </v-card>
