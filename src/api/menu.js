@@ -1,12 +1,25 @@
 const Menu = [
-  { header: 'Apps' },
+  { header: '基础功能' },
   {
-    text: 'Dashboard',
+    text: '工程概况',
     icon: 'dashboard',
     to: '/dashboard',
   },
+
   {
-    text: 'Chat',
+    text: '工程管理',
+    group: 'widgets',
+    to: '/widgets',
+    icon: 'widgets',
+    children: [
+      { to: '/widgets/social', text: '工程列表' },
+      { to: '/widgets/statistic', text: 'Statistic', badge: 'new' },
+      { to: '/widgets/chart', text: 'Chart' },
+      { to: '/widgets/list', text: 'List' },
+    ],
+  },
+  {
+    text: '传感器管理',
     icon: 'chat_bubble',
     target: '_blank',
     to: '/chat',
