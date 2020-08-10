@@ -79,8 +79,7 @@ export default {
   },
   methods: {
     login() {
-      /* if (this.$refs.form.validate()) { */
-      /* if (true) { */
+      if (this.$refs.form.validate()) {
         // 验证登陆
        setAuth(true); 
         this.loading = true
@@ -88,8 +87,8 @@ export default {
         this.$router.push('/dashboard')
         /* this.$router.push('/404') */
       }, 1000)
-    },
-    handleSocialLogin() {}
+    }
+    }
   }
 }
 </script>

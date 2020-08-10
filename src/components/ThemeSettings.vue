@@ -85,7 +85,7 @@ export default {
           key: 'red',
           value: {
             sideNav: 'red',
-            mainNav: 'red',
+           mainNav: 'red',
             sideMenu: 'white'
           }
         },
