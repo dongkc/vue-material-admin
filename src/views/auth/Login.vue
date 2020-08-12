@@ -53,49 +53,49 @@
 </template>
 
 <script>
-import {setAuth} from '../../test'
-export default {
+ import {setAuth} from '../../test'
+ export default {
 
-  name: 'PageLogin',
-  data() {
-    return {
-      loading: false,
-      formValid: false,
-      fromModel: {
-        username: '',
-        password: ''
-      },
-      formRule: {
-        username: [(v) => !!v || 'Username is required'],
-        password: [(v) => !!v || 'Password is required']
-      },
-      socialIcons: ['mdi-google', 'mdi-twitter', 'mdi-facebook']
-    }
-  },
-  computed: {
-    prefix() {
-      return ''
-    }
-  },
-  methods: {
-    login() {
-      if (this.$refs.form.validate()) {
-        // 验证登陆
-       setAuth(true); 
-        this.loading = true
-      setTimeout(() => {
-        this.$router.push('/dashboard')
-        /* this.$router.push('/404') */
-      }, 1000)
-    }
-    }
-  }
-}
+   name: 'PageLogin',
+   data() {
+     return {
+       loading: false,
+       formValid: false,
+       fromModel: {
+         username: '',
+         password: ''
+       },
+       formRule: {
+         username: [(v) => !!v || 'Username is required'],
+         password: [(v) => !!v || 'Password is required']
+       }
+     }
+   },
+   computed: {
+     prefix() {
+       return ''
+     }
+   },
+   methods: {
+     login() {
+       if (this.$refs.form.validate()) {
+         // 验证登陆
+         this.$store.dispatch("addUserName", this.fromModel.username);
+         setAuth(true); 
+         this.loading = true
+         setTimeout(()  => {
+           this.$router.push('/')
+           /* this.$router.push('/404') */
+         }, 1000)
+       }
+     }
+   }
+ }
 </script>
 
 <style lang="sass" scoped>
-.page-login
-  &__card
-  max-width: 600px
-  margin: 0 auto
+ .page-login
+   &__card
+   max-width: 600px
+   margin: 0 auto
 </style>

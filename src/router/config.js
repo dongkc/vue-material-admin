@@ -22,11 +22,6 @@ export const publicRoute = [
   },
 
   {
-    path: '/',
-    component: () => import('@/views/error/NotFound.vue')
-  },
-
-  {
     path: '/404',
     name: '404',
     meta: {
@@ -65,30 +60,6 @@ export const protectedRoute = [
           icon: 'dashboard'
         },
         component: () => import('@/views/Dashboard.vue')
-      },
-      {
-        path: '/media',
-        meta: {
-          title: 'Media',
-          group: 'apps',
-          icon: 'media'
-        },
-        name: 'Media',
-        component: () => import('@/views/Media.vue')
-      },
-
-      {
-        path: '/task',
-        meta: {
-          title: 'Task',
-          group: 'apps',
-          icon: 'media'
-        },
-        name: 'Task',
-        props: (route) => ({
-          type: route.query.type
-        }),
-        component: () => import('@/views/Calendar.vue')
       },
       {
         path: '/403',
