@@ -72,6 +72,37 @@ export const protectedRoute = [
       }
     ]
   },
+  {
+    path: '/test',
+    component: LayoutDefault,
+    meta: {
+      title: '主页',
+      group: 'apps',
+      icon: ''
+    },
+    redirect: '/list',
+    children: [
+      {
+        path: '/list',
+        name: 'Dashboard',
+        meta: {
+          title: '工程列表',
+          group: 'apps',
+          icon: 'dashboard'
+        },
+        component: () => import('@/views/ProjectsList.vue')
+      },
+      {
+        path: '/403',
+        name: 'Forbidden',
+        meta: {
+          title: 'Access Denied',
+          hiddenInMenu: true
+        },
+        component: () => import('@/views/error/Deny.vue')
+      }
+    ]
+  },
 
   //list
   {
@@ -140,6 +171,7 @@ export const protectedRoute = [
       }
     ]
   },
+
   // chat app
   {
     path: '/chat',

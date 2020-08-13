@@ -84,7 +84,7 @@
          setAuth(true); 
          this.loading = true
          setTimeout(()  => {
-           this.$router.push('/')
+           this.$router.push('/test')
            /* this.$router.push('/404') */
          }, 1000)
        }
