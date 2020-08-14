@@ -15,6 +15,17 @@
             v-on="on"
           >新建工程</v-btn>
         </template>
+<v-card>
+            <v-card-title>
+              <span class="headline">{{ formTitle }}</span>
+            </v-card-title>
+
+<v-card-actions>
+              <v-spacer></v-spacer>
+              <v-btn color="blue darken-1" text @click="close">Cancel</v-btn>
+              <v-btn color="blue darken-1" text @click="save">Save</v-btn>
+            </v-card-actions>
+</v-card>
       </v-dialog>
     </v-toolbar>
     <v-divider></v-divider>
@@ -55,6 +66,8 @@
  export default {
    data() {
      return {
+       dialog: false,
+
        headers: [
          { text: '项目ID',
            sortable: true,
@@ -92,7 +105,11 @@
    computed: {
      projects() {
        return Projects
-     }
+     },
+
+      formTitle () {
+        return this.editedIndex === -1 ? 'New Item' : 'Edit Item'
+      },
    },
 
    methods: {
@@ -106,6 +123,25 @@
        const index = this.projects.indexOf(item)
        confirm('Are you sure you want to delete this item?') && this.projects.splice(index, 1)
      },
-   }
+
+     save() {
+       this.dialog = false
+     },
+
+     close () {
+       this.dialog = false
+       this.$nextTick(() => {
+         this.editedItem = Object.assign({}, this.defaultItem)
+         this.editedIndex = -1
+       })
+     },
+   },
+
+   watch: {
+     dialog (val) {
+       val || this.close()
+     },
+   },
+
  }
 </script>
