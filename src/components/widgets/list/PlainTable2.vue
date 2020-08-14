@@ -100,6 +100,7 @@
        ],
 
        editedIndex: -1,
+
        editedItem: {
          name: '',
          calories: 0,
@@ -114,6 +115,8 @@
          carbs: 0,
          protein: 0,
        },
+
+       projects: [],
 
        actions: [
          {
@@ -135,17 +138,22 @@
      }
    },
 
-   computed: {
-     projects() {
-       return Projects
-     },
+    created () {
+      this.initialize()
+    },
 
+   computed: {
      formTitle () {
        return this.editedIndex === -1 ? '新建项目' : '编辑项目'
      },
    },
 
    methods: {
+
+     initialize() {
+       this.projects = Projects;
+     },
+
      editItem (item) {
        this.editedIndex = this.projects.indexOf(item)
        this.editedItem = Object.assign({}, item)
@@ -158,7 +166,12 @@
      },
 
      save() {
-       this.dialog = false
+        if (this.editedIndex > -1) {
+          Object.assign(this.projects[this.editedIndex], this.editedItem)
+        } else {
+          this.projects.push(this.editedItem)
+        }
+        this.close()
      },
 
      close () {
