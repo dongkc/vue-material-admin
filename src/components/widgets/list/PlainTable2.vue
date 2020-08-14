@@ -13,11 +13,6 @@
 
     <v-card-text class="pa-0">
       <v-data-table :headers="headers" :items="projects" hide-default-footer>
-        <template v-slot:item.avatar="{ item }">
-          <v-avatar class="ma-3">
-            <img :src="item.avatar" alt="avatar" />
-          </v-avatar>
-        </template>
         <template v-slot:item.progress="{ item }">
           <v-progress-linear
             :value="item.progress"
@@ -63,20 +58,19 @@ export default {
   data() {
     return {
       headers: [
-        {
-          text: '',
+        { text: '项目ID',
           align: 'center',
-          sortable: false,
-          value: 'avatar'
+          sortable: true,
+          value: 'id'
         },
         {
-          text: 'Name',
+          text: '工程名称',
           align: 'left',
           value: 'name'
         },
-        { text: 'Deadline', value: 'deadline' },
-        { text: 'Progress', value: 'progress' },
-        { text: 'Action', value: 'action', align: 'right' }
+        { text: '传感器地址范围', value: 'deadline' },
+        { text: '进度', value: 'progress' },
+        { text: '动作', value: 'action', align: 'right' }
       ],
       actions: [
         {

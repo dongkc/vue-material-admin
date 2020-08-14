@@ -20,9 +20,9 @@ router.beforeEach((to, from, next) => {
   NProgress.start()
 
   //auth route is authenticated
-  if (to.path !== "/auth/login" && !getAuth()) next({path: "/auth/login"})
-  else next()
-  // next()
+  // if (to.path !== "/auth/login" && !getAuth()) next({path: "/auth/login"})
+  // else next()
+  next()
 })
 
 router.afterEach(() => {
