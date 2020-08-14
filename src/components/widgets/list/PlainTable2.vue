@@ -2,7 +2,7 @@
   <v-card>
     <v-toolbar text dense flat>
       <v-toolbar-title>
-        Project
+        工程列表
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-btn icon>
@@ -10,6 +10,7 @@
       </v-btn>
     </v-toolbar>
     <v-divider></v-divider>
+
     <v-card-text class="pa-0">
       <v-data-table :headers="headers" :items="projects" hide-default-footer>
         <template v-slot:item.avatar="{ item }">
@@ -57,7 +58,7 @@
 </template>
 
 <script>
-import { Projects } from '@/api/project'
+import { Projects } from '@/api/project2'
 export default {
   data() {
     return {
