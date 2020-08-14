@@ -5,9 +5,17 @@
         工程列表
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn icon>
-        <v-icon>more_vert</v-icon>
-      </v-btn>
+      <v-dialog v-model="dialog" max-width="500px">
+        <template v-slot:activator="{ on, attrs }">
+          <v-btn
+            color="primary"
+            dark
+            class="mb-2"
+            v-bind="attrs"
+            v-on="on"
+          >新建工程</v-btn>
+        </template>
+      </v-dialog>
     </v-toolbar>
     <v-divider></v-divider>
 
@@ -24,11 +32,13 @@
           <v-icon
             small
             class="mr-2"
+            @click="editItem(item)"
           >
             mdi-pencil
           </v-icon>
           <v-icon
             small
+            @click="deleteItem(item)"
           >
             mdi-delete
           </v-icon>
@@ -57,7 +67,7 @@
          },
          { text: '传感器地址范围', value: 'deadline' },
          { text: '进度', value: 'progress' },
-         { text: '动作', value: 'actions', align: 'right' }
+         { text: '动作', value: 'actions', align: 'right', sortable: false}
        ],
        actions: [
          {
@@ -78,10 +88,24 @@
        ]
      }
    },
+
    computed: {
      projects() {
        return Projects
      }
+   },
+
+   methods: {
+     editItem (item) {
+       this.editedIndex = this.projects.indexOf(item)
+       this.editedItem = Object.assign({}, item)
+       this.dialog = true
+     },
+
+     deleteItem (item) {
+       const index = this.projects.indexOf(item)
+       confirm('Are you sure you want to delete this item?') && this.projects.splice(index, 1)
+     },
    }
  }
 </script>
