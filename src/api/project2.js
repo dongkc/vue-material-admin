@@ -2,7 +2,7 @@ const Projects = [
   {
     username: 'Dessie',
     name: '北京隧道项目1',
-    deadline: '1-200',
+    range: '1-200',
     progress: 20,
     color: 'pink',
     id: '1',
@@ -10,7 +10,7 @@ const Projects = [
   {
     username: 'Jakayla',
     name: '北京隧道项目2',
-    deadline: '1-200',
+    range: '1-200',
     progress: 70,
     color: 'success',
     id: '2',
@@ -18,7 +18,7 @@ const Projects = [
   {
     username: 'Ludwiczakpawel',
     name: '北京隧道项目3',
-    deadline: '1-200',
+    range: '1-200',
     progress: 50,
     color: 'info',
     id: '3',
@@ -26,7 +26,7 @@ const Projects = [
   {
     username: 'Damenleeturks',
     name: '北京隧道项目4',
-    deadline: '1-200',
+    range: '1-200',
     progress: 30,
     color: 'teal',
     id: '4',
@@ -34,7 +34,7 @@ const Projects = [
   {
     username: 'Caspergrl',
     name: '北京隧道项目5',
-    deadline: '1-200',
+    range: '1-200',
     progress: 15,
     color: 'grey',
     id: '5',

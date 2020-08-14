@@ -65,8 +65,8 @@
            align: 'left',
            value: 'name'
          },
-         { text: '传感器地址范围', value: 'deadline' },
-         { text: '进度', value: 'progress' },
+         { text: '传感器地址范围', value: 'range' },
+         /* { text: '进度', value: 'progress' }, */
          { text: '动作', value: 'actions', align: 'right', sortable: false}
        ],
        actions: [
