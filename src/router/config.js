@@ -42,20 +42,20 @@ export const publicRoute = [
 
 export const protectedRoute = [
   {
-    path: '/',
+    path: '/ww',
     component: LayoutDefault,
     meta: {
       title: 'Home',
       group: 'apps',
       icon: ''
     },
-    redirect: '/dashboard',
+    redirect: '/listsss',
     children: [
       {
-        path: '/dashboard',
+        path: '/listwww',
         name: 'Dashboard',
         meta: {
-          title: 'Dashboard',
+          title: 'www',
           group: 'apps',
           icon: 'dashboard'
         },
@@ -73,7 +73,7 @@ export const protectedRoute = [
     ]
   },
   {
-    path: '/test',
+    path: '/',
     component: LayoutDefault,
     meta: {
       title: '主页',
@@ -84,7 +84,7 @@ export const protectedRoute = [
     children: [
       {
         path: '/list',
-        name: 'Dashboard',
+        name: 'list',
         meta: {
           title: '工程列表',
           group: 'apps',
