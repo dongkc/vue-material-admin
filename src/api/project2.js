@@ -39,6 +39,39 @@ const Projects = [
     color: 'grey',
     id: '5',
   },
+  {
+    username: 'Caspergrl',
+    name: '北京隧道项目6',
+    range: '1-200',
+    progress: 15,
+    color: 'grey',
+    id: '6',
+  },
+  {
+    username: 'Caspergrl',
+    name: '北京隧道项目7',
+    range: '1-200',
+    progress: 15,
+    color: 'grey',
+    id: '7',
+  },
+  {
+    username: 'Caspergrl',
+    name: '北京隧道项目8',
+    range: '1-200',
+    progress: 15,
+    color: 'grey',
+    id: '8',
+  },
+
+  {
+    username: 'Caspergrl',
+    name: '北京隧道项目9',
+    range: '1-200',
+    progress: 15,
+    color: 'grey',
+    id: '9',
+  },
 ]
 
 const getProject = limit => {

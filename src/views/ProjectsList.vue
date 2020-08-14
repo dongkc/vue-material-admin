@@ -6,7 +6,6 @@
           <plain-table />
         </v-col>
         <v-col cols="12">
-          <plain-table-order />
         </v-col>
       </v-row>
     </v-container>
@@ -22,7 +21,6 @@ export default {
   name: 'PageDashboard',
   components: {
     PlainTable,
-    PlainTableOrder
   },
   data: () => ({
     color: Material,
