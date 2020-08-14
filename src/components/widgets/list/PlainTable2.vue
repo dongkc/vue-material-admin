@@ -2,7 +2,7 @@
   <v-card>
     <v-toolbar text dense flat>
       <v-toolbar-title>
-        工程列表
+        项目列表
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-dialog v-model="dialog" max-width="500px">
@@ -13,19 +13,35 @@
             class="mb-2"
             v-bind="attrs"
             v-on="on"
-          >新建工程</v-btn>
+          >新建项目</v-btn>
         </template>
-<v-card>
-            <v-card-title>
-              <span class="headline">{{ formTitle }}</span>
-            </v-card-title>
+        <v-card>
+          <v-card-title>
+            <span class="headline">{{ formTitle }}</span>
+          </v-card-title>
 
-<v-card-actions>
-              <v-spacer></v-spacer>
-              <v-btn color="blue darken-1" text @click="close">Cancel</v-btn>
-              <v-btn color="blue darken-1" text @click="save">Save</v-btn>
-            </v-card-actions>
-</v-card>
+          <v-card-text>
+            <v-container>
+              <v-row>
+                <v-col cols="12" sm="6" md="4">
+                  <v-text-field v-model="editedItem.id" label="项目编号"></v-text-field>
+                </v-col>
+                <v-col cols="12" sm="6" md="4">
+                  <v-text-field v-model="editedItem.name" label="项目名称"></v-text-field>
+                </v-col>
+                <v-col cols="12" sm="6" md="4">
+                  <v-text-field v-model="editedItem.range" label="传感器地址范围"></v-text-field>
+                </v-col>
+              </v-row>
+            </v-container>
+          </v-card-text>
+
+          <v-card-actions>
+            <v-spacer></v-spacer>
+            <v-btn color="blue darken-1" text @click="close">Cancel</v-btn>
+            <v-btn color="blue darken-1" text @click="save">Save</v-btn>
+          </v-card-actions>
+        </v-card>
       </v-dialog>
     </v-toolbar>
     <v-divider></v-divider>
@@ -82,6 +98,23 @@
          /* { text: '进度', value: 'progress' }, */
          { text: '动作', value: 'actions', align: 'right', sortable: false}
        ],
+
+       editedIndex: -1,
+       editedItem: {
+         name: '',
+         calories: 0,
+         fat: 0,
+         carbs: 0,
+         protein: 0,
+       },
+       defaultItem: {
+         name: '',
+         calories: 0,
+         fat: 0,
+         carbs: 0,
+         protein: 0,
+       },
+
        actions: [
          {
            text: 'View Item',
@@ -107,9 +140,9 @@
        return Projects
      },
 
-      formTitle () {
-        return this.editedIndex === -1 ? 'New Item' : 'Edit Item'
-      },
+     formTitle () {
+       return this.editedIndex === -1 ? '新建项目' : '编辑项目'
+     },
    },
 
    methods: {
@@ -121,7 +154,7 @@
 
      deleteItem (item) {
        const index = this.projects.indexOf(item)
-       confirm('Are you sure you want to delete this item?') && this.projects.splice(index, 1)
+       confirm('删除后数据不可恢复,确定删除此工程吗?') && this.projects.splice(index, 1)
      },
 
      save() {
